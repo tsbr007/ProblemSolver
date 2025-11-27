@@ -25,6 +25,7 @@ PROPERTIES_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(_
 config = read_properties(PROPERTIES_FILE)
 BACKEND_PORT = int(config.get('BACKEND_PORT', 8000))
 FRONTEND_PORT = int(config.get('FRONTEND_PORT', 5173))
+DATA_FILE = config.get('DATA_FILE', r"C:\Balaji\Career\KBASE\data.json")
 
 # CORS configuration
 origins = [
@@ -46,7 +47,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DATA_FILE = r"C:\Balaji\Career\KBASE\data.json"
+
 
 class Entry(BaseModel):
     id: Optional[str] = None
